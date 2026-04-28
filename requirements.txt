@@ -1,0 +1,4 @@
+aiohttp>=3.9.0
+websockets>=12.0
+python-telegram-bot>=21.0
+cantex-sdk>=4.0
