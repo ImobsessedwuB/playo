@@ -1,0 +1,17 @@
+[phases.setup]
+nixPkgs = ["python311"]
+
+[phases.install]
+cmds = [
+  "python -m venv /opt/venv",
+  "/opt/venv/bin/pip install --upgrade pip",
+  "/opt/venv/bin/pip install -r requirements.txt"
+]
+
+[start]
+# Flag -u: paksa stdout unbuffered agar log langsung muncul di Railway
+cmd = "/opt/venv/bin/python -u run.py"
+
+[variables]
+# Backup: pastikan stdout tidak ter-buffer walau tanpa flag -u
+PYTHONUNBUFFERED = "1"
