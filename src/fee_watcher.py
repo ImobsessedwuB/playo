@@ -68,7 +68,7 @@ class FeeWatcher:
     async def _run_ws(self) -> None:
         async with websockets.connect(
             CANTEX_WS_URL,
-            extra_headers={"origin": "https://www.cantex.io"},
+            additional_headers={"origin": "https://www.cantex.io"},
             ping_interval=20,
             ping_timeout=10,
         ) as ws:
